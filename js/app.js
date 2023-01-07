@@ -13,7 +13,7 @@ const getAsteroidsData = async () => {
     const asteroidName = asteroid.name;
     const asteroidMaxSize = asteroid.estimated_diameter.meters.estimated_diameter_max;
     const asteroidMinSize = asteroid.estimated_diameter.meters.estimated_diameter_min;
-    const asteroidEstimatedDiameter = parseFloat(asteroidMaxSize - asteroidMinSize).toFixed(2);
+    const asteroidEstimatedSize = parseFloat(asteroidMaxSize - asteroidMinSize).toFixed(2);
     const asteroidApproachTime = asteroid.close_approach_data[0].close_approach_date_full.split(" ")[1];
     const isHazardous = asteroid.is_potentially_hazardous_asteroid;
     const asteroidNeoReferenceId = asteroid.neo_reference_id;
@@ -24,11 +24,20 @@ const getAsteroidsData = async () => {
       <li class="asteroid-container asteroid-container-${index+1}">
         <div class="asteroid-details">
           <p>${index+1}. ${asteroidName}</p>
-          <p>Estimated Diameter - ${asteroidEstimatedDiameter} m</p>
-          <p>Estimated Speed - ${(asteroidSpeed).toFixed(2)} km/s</p>
-          <p>Closest-Approach Time - ${asteroidApproachTime}</p>
+          <p>Estimated Size - ${asteroidEstimatedSize} m</p>
+          <p>Approach Time - ${asteroidApproachTime}</p>
           <p>Miss Distance - ${asteroidMissDistance.toFixed(2)} au</p>
-          ${isHazardous ? "<p>Potentially Dangerous</p>" : "<p>Not Dangerous</p>"}
+          ${
+            isHazardous 
+            ? "<p class='dangerous'>Potentially Dangerous</p>"
+            : "<p class='not-dangerous'>Not Dangerous</p>"
+          }
+        </div>
+        <div class="asteroid-size-comparison">
+          ${compareSize(asteroidEstimatedSize)}
+        </div>
+        <div class="asteroid-speed-comparison">
+          ${compareSpeed(asteroidSpeed)}
         </div>
       </li>
       <br>
