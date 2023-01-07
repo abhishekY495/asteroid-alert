@@ -3,3 +3,36 @@ body {
   color: white;
   font-family: sans-serif;
 }
+
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  text-align: center;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+
+/*  */
+
+
+#asteroids {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem 5rem;
+}
