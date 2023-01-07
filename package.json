@@ -1,7 +1,7 @@
 {
   "name": "asteroid-alert",
   "version": "1.0.0",
-  "description": "",
+  "description": "Asteroids that will make a close approach by Earth today.",
   "main": "index.js",
   "scripts": {
     "dev": "netlify dev"
