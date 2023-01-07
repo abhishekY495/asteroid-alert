@@ -33,6 +33,56 @@ button:hover {
 #asteroids {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   margin: 1rem 5rem;
+}
+
+.grid-col-span-3 {
+  grid-column: span 3;
+}
+
+.asteroid-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 1.5rem 0;
+  padding: 1rem;
+  border: 1px solid #3b3b3b;
+  border-radius: 0.3rem;
+}
+
+.asteroid-size-comparison, .asteroid-speed-comparison {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  width: 100px;
+}
+
+.dangerous {
+  background-color: #ff5e5e;
+  color: white;
+  padding: 0.15rem 0.4rem;
+  width: fit-content;
+  border: none;
+  border-radius: 0.2rem;
+}
+
+.not-dangerous {
+  background-color: #6fff87;
+  color: black;
+  padding: 0.15rem 0.4rem;
+  width: fit-content;
+  border: none;
+  border-radius: 0.2rem;
+}
+
+span {
+  font-size: 1rem;
+  font-weight: bold;
 }
