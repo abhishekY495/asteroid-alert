@@ -84,10 +84,10 @@ function compareSize(asteroidEstimatedSize) {
         <img src="../assets/football-field.png" alt="A Football field"></img>
       `;
   }
-  if (asteroidEstimatedSize >= 101 && asteroidEstimatedSize <= 200) {
+  if (asteroidEstimatedSize >= 181 && asteroidEstimatedSize <= 200) {
     return `
         <p>Great Pyramids of Giza</p>
-        <img src="../assets/great-pyramids=of-giza.png" alt="The Great Pyramid of Giza"></img>
+        <img src="../assets/great-pyramids-of-giza.png" alt="The Great Pyramid of Giza"></img>
       `;
   }
   if (asteroidEstimatedSize >= 201 && asteroidEstimatedSize <= 400) {
@@ -118,15 +118,15 @@ function compareSize(asteroidEstimatedSize) {
         <img src="../assets/football-field.png" alt="A Football field"></img>
       `;
   }
-  if (asteroidEstimatedSize >= 2001 && asteroidEstimatedSize <= 3000) {
+  if (asteroidEstimatedSize >= 1001 && asteroidEstimatedSize <= 2000) {
     return `
         <p>
-          <span>3X</span> Burj Khalifa
+          <span>2X</span> Burj Khalifa
         </p>
         <img src="../assets/burj-khalifa.png" alt="Burj Khalifa"></img>
       `;
   }
-  if (asteroidEstimatedSize >= 3001 && asteroidEstimatedSize <= 6000) {
+  if (asteroidEstimatedSize >= 2001 && asteroidEstimatedSize <= 6000) {
     return `
         <p>Kilimanjaro</p>
         <img src="../assets/kilimanjaro.png" alt="kilimanjaro"></img>
