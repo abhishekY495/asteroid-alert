@@ -3,7 +3,7 @@ function compareSpeed(asteroidSpeed) {
   if (asteroidSpeed <= 1) {
     return `
       <p>Speed of Bullet</p>
-      <img src="../assets/bullet.png"></img>
+      <img src="../assets/images/bullet.png"></img>
     `;
   } else {
     return `
@@ -13,7 +13,7 @@ function compareSpeed(asteroidSpeed) {
         </span>
         Speed of Bullet
       </p>
-      <img src="../assets/bullet.png"></img>
+      <img src="../assets/images/bullet.png"></img>
     `;
   }
 }
