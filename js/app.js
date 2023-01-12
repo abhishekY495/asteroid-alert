@@ -34,12 +34,12 @@ const getAsteroidsData = async () => {
             : "<p class='not-dangerous'>Not Dangerous</p>"
           }
         </div>
-        <div class="asteroid-size-comparison">
-          ${compareSize(asteroidEstimatedSize)}
-        </div>
-        <div class="asteroid-speed-comparison">
-          ${compareSpeed(asteroidSpeed)}
-        </div>
+        <div class="asteroid-size-comparison">${compareSize(asteroidEstimatedSize)}</div>
+        <div class="asteroid-speed-comparison">${compareSpeed(asteroidSpeed)}</div>
+        <button class="toggle-orbit-btn grid-col-span-3" onclick="asteroidOrbit(${asteroidNeoReferenceId},${index+1})">
+          Show Orbit
+        </button>
+        <div class="orbit-container orbit-container-${index+1} grid-col-span-3 hide"></div>
       </li>
       <br>
     `
