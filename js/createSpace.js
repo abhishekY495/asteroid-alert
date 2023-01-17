@@ -1,5 +1,5 @@
 let space;
-function createSpace(orbitContainer, index) {
+function createSpace(orbitContainer, index, data, asteroidID) {
   if (!orbitContainer.innerHTML) {
     space = new Spacekit.Simulation(orbitContainer, {
       basePath: "https://typpo.github.io/spacekit/src",
@@ -47,5 +47,6 @@ function createSpace(orbitContainer, index) {
         speed: 0.5,
       },
     });
+    createAsteroid(data, asteroidID);
   }
 }
