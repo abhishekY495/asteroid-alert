@@ -1,5 +1,5 @@
 const todaysDate = (new Date()).getDate();
-localStorage.setItem("localDate", String(20));
+localStorage.setItem("localDate", String(todaysDate));
 
 async function asteroidOrbit(asteroidID, index) {
   const orbitContainer = document.querySelector(`.orbit-container-${index}`);
