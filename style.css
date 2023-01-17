@@ -26,15 +26,21 @@ button:hover {
   cursor: pointer;
 }
 
+a {
+  text-decoration: none;
+  color: white;
+}
 
 /*  */
 
-header {
+#header-link {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  width: fit-content;
+  margin: 0 auto;
 }
 
 #header-img {
