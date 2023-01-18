@@ -13,7 +13,7 @@ function createSpace(orbitContainer, index, data, asteroidID) {
     space.createObject("sun", Spacekit.SpaceObjectPresets.SUN);
     space.createLight([0, 0, 0]);
     space.createAmbientLight();
-    // 
+    //
     const earth = space.createSphere(`earth${index}`, {
       textureUrl: "./assets/space/earthtexture.jpg",
       radius: 0.005,
@@ -49,4 +49,9 @@ function createSpace(orbitContainer, index, data, asteroidID) {
     });
     createAsteroid(data, asteroidID);
   }
+  const spaceDate = new Date();
+  const date = spaceDate.getDate();
+  const month = spaceDate.getMonth() + 1;
+  const year = spaceDate.getFullYear();
+  space.setDate(new Date(`${year}-${month}-${date}`));
 }
