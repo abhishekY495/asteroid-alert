@@ -1,6 +1,3 @@
-const todaysDate = new Date().getDate();
-localStorage.setItem("localDate", String(todaysDate));
-
 async function asteroidOrbit(asteroidID, index) {
   const apiURL = `.netlify/functions/getOrbitData?id=${asteroidID}`;
   const orbitContainer = document.querySelector(`.orbit-container-${index}`);
@@ -8,7 +5,7 @@ async function asteroidOrbit(asteroidID, index) {
   const localOrbitData = localStorage.getItem(JSON.parse(asteroidID));
   const localDate = localStorage.getItem("localDate");
   //
-  if (!localOrbitData || !localDate) {
+  if (!localOrbitData) {
     const response = await fetch(apiURL);
     const data = await response.json();
     localStorage.setItem(asteroidID, JSON.stringify(data));
