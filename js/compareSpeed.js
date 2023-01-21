@@ -1,19 +1,17 @@
 function compareSpeed(asteroidSpeed) {
-  const averageSpeedOfBulletInKiloMeterPerSec = 1;
+  const averageSpeedOfRifleBulletInKiloMeterPerSec = 1;
   if (asteroidSpeed <= 1) {
     return `
-      <p>Speed of Bullet</p>
-      <img src="../assets/images/bullet.png"></img>
+      <img class="comparison-image" src="../assets/images/rifle-bullet.png"></img>
+      <p>Bullet</p>
     `;
   } else {
     return `
+      <img class="comparison-image" src="../assets/images/rifle-bullet.png"></img>
       <p>
-        <span>
-          ${times(asteroidSpeed, averageSpeedOfBulletInKiloMeterPerSec)}X
-        </span>
-        Speed of Bullet
+        <span>${times(asteroidSpeed, averageSpeedOfRifleBulletInKiloMeterPerSec)}X</span>
+        Bullet
       </p>
-      <img src="../assets/images/bullet.png"></img>
     `;
   }
 }

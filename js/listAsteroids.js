@@ -20,7 +20,7 @@ function listAsteroids(asteroidsData) {
     asteroidsList.innerHTML += `
       <li class="asteroid-container asteroid-container-${index + 1}">
         <div class="asteroid-details">
-          <p class="asteroid-name">${index + 1}. ${asteroidName}</p>
+          <p class="asteroid-name">${asteroidName}</p>
           <p class="asteroid-size">Estimated Size - ${asteroidEstimatedSize} m</p>
           <p class="asteroid-miss-distance">Miss Distance - ${asteroidMissDistance.toFixed(1)} au</p>
           <p class="asteroid-approach-time">Approach Time - ${asteroidApproachTime}</p>
@@ -37,6 +37,7 @@ function listAsteroids(asteroidsData) {
         </button>
         <div class="orbit-container orbit-container-${index + 1} grid-col-span-3 hide"></div>
       </li>
+      <br>
       <br>
     `;
   });
