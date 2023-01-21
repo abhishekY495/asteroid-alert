@@ -39,7 +39,7 @@ function compareSize(asteroidEstimatedSize) {
   if (asteroidEstimatedSize >= 13 && asteroidEstimatedSize <= 15) {
     return `
       <img class="comparison-image" src="../assets/images/5-storey-building.png" alt="5-Storey building"></img>
-      <p>5 Storey building</p>
+      <p><span>5</span> Storey building</p>
     `;
   }
   if (asteroidEstimatedSize >= 16 && asteroidEstimatedSize <= 20) {
@@ -51,7 +51,7 @@ function compareSize(asteroidEstimatedSize) {
   if (asteroidEstimatedSize >= 21 && asteroidEstimatedSize <= 40) {
     return `
       <img class="comparison-image" src="../assets/images/10-storey-building.png" alt="10-Storey building"></img>
-      <p>10 Storey building</p>
+      <p><span>10</span> Storey building</p>
     `;
   }
   if (asteroidEstimatedSize >= 41 && asteroidEstimatedSize <= 50) {
