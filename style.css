@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap');
+
 body {
-  background-color: #121212;
+  background-color: #111111;
   color: white;
-  font-family: sans-serif;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 h1,
@@ -40,7 +44,12 @@ a {
   justify-content: center;
   gap: 0.5rem;
   width: fit-content;
-  margin: 0 auto;
+  margin: auto;
+}
+
+header {
+  font-size: 1.5rem;
+  margin: 1rem 0 1.5rem 0;
 }
 
 #header-img {
@@ -50,40 +59,57 @@ a {
 #asteroids {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  margin: 1rem 5rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .asteroid-container {
-  width: 100%;
+  background-color: #212121;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
   align-items: center;
-  gap: 0.5rem;
-  margin: 0 0 1.5rem 0;
-  padding: 1rem;
-  border: 1px solid #3b3b3b;
-  border-radius: 0.3rem;
+  padding: 1rem 0 0 0;
+  width: 1000px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 
-.asteroid-details {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
+.grid-col-span-3 {
+  grid-column: span 3;
 }
 
 .asteroid-size-comparison, .asteroid-speed-comparison {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  gap: 1rem;
+  font-weight: 200;
+}
+
+.asteroid-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-weight: 200;
+}
+
+.asteroid-name {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: -0.5rem;
+}
+
+.comparison-image {
+  width: 130px;
 }
 
 .dangerous {
   background-color: #ff5e5e;
   color: white;
+  font-weight: 400;
   padding: 0.15rem 0.4rem;
-  width: fit-content;
+  margin-top: 0.5rem;
   border: none;
   border-radius: 0.2rem;
 }
@@ -91,30 +117,31 @@ a {
 .not-dangerous {
   background-color: #6fff87;
   color: black;
+  font-weight: 400;
   padding: 0.15rem 0.4rem;
-  width: fit-content;
+  margin-top: 0.5rem;
   border: none;
   border-radius: 0.2rem;
 }
 
-img {
-  width: 100px;
-}
-
 span {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: bold;
-}
-
-.grid-col-span-3 {
-  grid-column: span 3;
 }
 
 .toggle-orbit-btn {
   background-color: #3b3b3b;
   color: white;
-  font-size: 0.9rem;
-  padding: 0.3rem 0;
+  font-size: 1.1rem;
+  padding-block: 0.5rem;
+  border: none;
+  margin-top: 0.5rem;
+  width: 100%;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.toggle-orbit-btn:hover {
+  background-color: #303030;
 }
 
 .hide {
@@ -123,5 +150,12 @@ span {
 
 .orbit-container {
   width: 100%;
-  height: 450px;
+  height: 500px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.orbit-container > canvas {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
