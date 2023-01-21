@@ -25,7 +25,7 @@ function createAsteroid(data, asteroidID) {
   const asteroid = space.createShape(`asteroid${asteroidID}`, {
     ephem,
     shape: {
-      shapeUrl: "./assets/space/shapeData.obj",
+      shapeUrl: "../assets/spaceObjects/shapeData.obj",
     },
     rotation: {
       enable: true,

@@ -2,7 +2,7 @@ let space;
 function createSpace(orbitContainer, index, data, asteroidID) {
   if (!orbitContainer.innerHTML) {
     space = new Spacekit.Simulation(orbitContainer, {
-      basePath: "https://typpo.github.io/spacekit/src",
+      basePath: "../assets/spacekit-src",
       jdPerSecond: 0.5,
       camera: {
         enableDrift: false,
@@ -15,7 +15,7 @@ function createSpace(orbitContainer, index, data, asteroidID) {
     space.createAmbientLight();
     //
     const earth = space.createSphere(`earth${index}`, {
-      textureUrl: "./assets/space/earthtexture.jpg",
+      textureUrl: "../assets/spaceObjects/earthtexture.jpg",
       radius: 0.005,
       ephem: Spacekit.EphemPresets.EARTH,
       levelsOfDetail: [
