@@ -18,27 +18,36 @@ function listAsteroids(asteroidsData) {
     const asteroidMissDistance = parseFloat(asteroid.close_approach_data[0].miss_distance.astronomical);
     //
     asteroidsList.innerHTML += `
-      <li class="asteroid-container asteroid-container-${index + 1}">
-        <div class="asteroid-details">
-          <p class="asteroid-name">${asteroidName}</p>
-          <p class="asteroid-size">Estimated Size - ${asteroidEstimatedSize} m</p>
-          <p class="asteroid-miss-distance">Miss Distance - ${asteroidMissDistance.toFixed(1)} au</p>
-          <p class="asteroid-approach-time">Approach Time - ${asteroidApproachTime}</p>
-          ${
-          isHazardous
-            ? "<p class='dangerous'>Potentially Dangerous</p>"
-            : "<p class='not-dangerous'>Not Dangerous</p>"
-          }
-        </div>
-        <div class="asteroid-size-comparison">${compareSize(asteroidEstimatedSize)}</div>
-        <div class="asteroid-speed-comparison">${compareSpeed(asteroidSpeed)}</div>
-        <button class="toggle-orbit-btn grid-col-span-3" onclick="asteroidOrbit(${asteroidNeoReferenceId},${index + 1})">
-          Show Orbit
-        </button>
+      <div class="container">
+        <li class="asteroid-container asteroid-container-${index + 1}">
+          <div class="asteroid-details">
+            <p class="asteroid-name">${asteroidName}</p>
+            <p class="asteroid-size">Estimated Size - ${asteroidEstimatedSize} m</p>
+            <p class="asteroid-miss-distance">Miss Distance - ${asteroidMissDistance.toFixed(2)} au</p>
+            <p class="asteroid-approach-time">Approach Time - ${asteroidApproachTime}</p>
+            ${
+            isHazardous
+              ? `<div class="toggle-orbit-div">
+                  <p class="dangerous">Potentially Dangerous</p>
+                  <button
+                    class="toggle-orbit-btn" 
+                    onclick="asteroidOrbit(${asteroidNeoReferenceId},${index + 1})">
+                  </button>
+                </div>`
+              : `<div class="toggle-orbit-div">
+                  <p class="not-dangerous">Not Dangerous</p>
+                  <button
+                    class="toggle-orbit-btn" 
+                    onclick="asteroidOrbit(${asteroidNeoReferenceId},${index + 1})">
+                  </button>
+                </div>`
+            }
+          </div>
+          <div class="asteroid-size-comparison">${compareSize(asteroidEstimatedSize)}</div>
+          <div class="asteroid-speed-comparison">${compareSpeed(asteroidSpeed)}</div>
+        </li>
         <div class="orbit-container orbit-container-${index + 1} grid-col-span-3 hide"></div>
-      </li>
-      <br>
-      <br>
+      </div>
     `;
   });
 }
