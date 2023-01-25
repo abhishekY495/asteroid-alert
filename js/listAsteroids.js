@@ -1,11 +1,10 @@
 function listAsteroids(asteroidsData) {
   const asteroidsList = document.querySelector("#asteroids");
   const regex = /\(([^)]*)\)/;
-  //
   const nearEarthObjects = asteroidsData["near_earth_objects"];
   const todaysDate = Object.keys(nearEarthObjects)[0];
-  localStorage.setItem("localDate", todaysDate);
   const asteroids = nearEarthObjects[todaysDate];
+  // 
   asteroids.map((asteroid, index) => {
     const asteroidName = asteroid.name.match(regex)[1];
     const asteroidMaxSize = asteroid.estimated_diameter.meters.estimated_diameter_max;
@@ -16,7 +15,7 @@ function listAsteroids(asteroidsData) {
     const asteroidNeoReferenceId = asteroid.neo_reference_id;
     const asteroidSpeed = parseFloat(asteroid.close_approach_data[0].relative_velocity.kilometers_per_second);
     const asteroidMissDistance = parseFloat(asteroid.close_approach_data[0].miss_distance.astronomical);
-    //
+    // 
     asteroidsList.innerHTML += `
       <div class="container">
         <li class="asteroid-container asteroid-container-${index + 1}">
