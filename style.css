@@ -27,6 +27,11 @@ li {
   list-style: none;
 }
 
+button {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
 button:hover {
   cursor: pointer;
 }
@@ -70,7 +75,7 @@ a {
   margin: 0 0 2rem 0;
 }
 .asteroid-container {
-  background-color: #151515;
+  background-color: #080808;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
@@ -97,7 +102,7 @@ span {
   font-weight: 300;
 }
 .comparison-image {
-  width: 150px;
+  width: 130px;
 }
 
 .asteroid-details {
@@ -115,17 +120,32 @@ span {
 .toggle-orbit-div {
   display: flex;
   gap: 0.5rem;
-  margin-top: 0.5rem;
+  height: 3rem;
 }
 .toggle-orbit-btn {
-  padding: 0.8rem;
+  width: 2.5rem;
   border-radius: 0.2rem;
+  background: url("./assets/images/asteroid-button.png") no-repeat center;
+  background-size: contain;
+  margin: 0 0 0.2rem 0;
+}
+.rotate {
+  animation: rotate 2s infinite;
+}
+.open-space {
+  animation: rotate 2s infinite;
+  opacity: 0.5;
+}
+@keyframes rotate {
+  100% {transform: rotate(360deg);}
 }
 .dangerous, .not-dangerous {
   font-weight: 400;
   border: none;
   border-radius: 0.2rem;
   padding: 0.15rem 0.4rem;
+  height: 1.5rem;
+  margin: 0.5rem 0 0 0;
 }
 .dangerous {
   background-color: #ff5e5e;
@@ -160,13 +180,14 @@ span {
   }
   .asteroid-name {
     font-size: 2.2rem;
+    margin: 0.5rem 0 -0.1rem 0;
   }
   .asteroid-size-comparison,
   .asteroid-speed-comparison {
     padding-top: 0.5rem;
   }
   .comparison-image {
-    width: 120px;
+    width: 110px;
   }
 }
 
@@ -185,6 +206,7 @@ span {
     font-size: 2rem;
   }
   .dangerous, .not-dangerous {
+    font-size: 0.9rem;
     font-weight: 400;
     padding: 0 0.4rem -1rem 0.4rem;
   }
@@ -209,18 +231,108 @@ span {
   }
   .asteroid-container {
     width: 550px;
-    padding: 1rem 1rem 1.5rem 2rem;
+    padding: 1.3rem 1rem 1.5rem 2rem;
     grid-template-columns: 240px 170px 170px;
     align-items: flex-end;
   }
   .asteroid-name {
     font-size: 1.6rem;
-    margin: -0.5rem 0;
+    margin: 0 0 -0.5rem 0;
   }
-  .asteroid-size-comparison, .asteroid-speed-comparison {
+  .asteroid-size-comparison,
+  .asteroid-speed-comparison {
     padding-top: 0;
+    margin: 0 0 0.5rem 0;
   }
   .comparison-image {
     width: 90px;
+  }
+}
+
+@media (max-width: 642px) {
+  .asteroid-container {
+    width: 450px;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    gap: 1.3rem;
+    padding: 1.8rem;
+  }
+  .asteroid-details {
+    grid-column: span 2;
+    align-items: center;
+    letter-spacing: 0.5px;
+  }
+  .asteroid-name {
+    font-size: 3.2rem;
+    margin: 0 0 0.2rem 0;
+  }
+  .comparison-image {
+    width: 100px;
+  }
+  .asteroid-size-comparison {
+    margin: 0;
+    justify-self: end;
+  }
+  .asteroid-speed-comparison {
+    margin: 0;
+    justify-self: start;
+  }
+}
+
+@media (max-width:550px) {
+  .asteroid-container {
+    width: 350px;
+  }
+}
+
+@media (max-width:480px) {
+  #header-link {
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    letter-spacing: 0;
+  }
+  #header-img {
+    width: 2.5rem;
+  }
+  .asteroid-container {
+    padding: 0.8rem 0;
+    gap: 0.5rem;
+  }
+  .asteroid-name {
+    font-size: 2rem;
+    margin: 0 0 -0.3rem 0;
+  }
+  .asteroid-size-comparison, .asteroid-speed-comparison {
+    width: 100px;
+  }
+  .asteroid-size-comparison > p, .asteroid-speed-comparison > p {
+    font-size: 0.9rem;
+  }
+  span {
+    font-size: 0.9rem;
+  }
+  .comparison-image {
+    width: 80px;
+  }
+}
+
+@media (max-width:400px) {
+  #header-link {
+    font-size: 1.3rem;
+  }
+  .asteroid-container {
+    width: 300px;
+  }
+  .comparison-image {
+    width: 60px;
+  }
+  .orbit-container {
+    height: 280px;
+  }
+}
+
+@media (max-width:340px) {
+  #header-img {
+    display: none;
   }
 }
