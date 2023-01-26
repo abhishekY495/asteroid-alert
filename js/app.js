@@ -25,6 +25,7 @@ const getAsteroidsData = async () => {
       listAsteroids(localAsteroids);
     }
   }
+  orbitBtnRotate();
 };
 
 getAsteroidsData();
