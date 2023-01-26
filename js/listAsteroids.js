@@ -29,14 +29,14 @@ function listAsteroids(asteroidsData) {
               ? `<div class="toggle-orbit-div">
                   <p class="dangerous">Potentially Dangerous</p>
                   <button
-                    class="toggle-orbit-btn" 
+                    class="toggle-orbit-btn toggle-orbit-btn-${index + 1}" 
                     onclick="asteroidOrbit(${asteroidNeoReferenceId},${index + 1})">
                   </button>
                 </div>`
               : `<div class="toggle-orbit-div">
                   <p class="not-dangerous">Not Dangerous</p>
                   <button
-                    class="toggle-orbit-btn" 
+                    class="toggle-orbit-btn toggle-orbit-btn-${index + 1}" 
                     onclick="asteroidOrbit(${asteroidNeoReferenceId},${index + 1})">
                   </button>
                 </div>`
