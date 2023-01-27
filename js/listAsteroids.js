@@ -45,6 +45,17 @@ function listAsteroids(asteroidsData) {
           <div class="asteroid-size-comparison">${compareSize(asteroidEstimatedSize)}</div>
           <div class="asteroid-speed-comparison">${compareSpeed(asteroidSpeed)}</div>
         </li>
+        <div class="space-options space-options-${index + 1} hide">
+          <label class="options-toggle" onclick="spaceOptions(${index + 1})"><input type="checkbox">Show options</label>
+          <div class="options options-${index + 1}">
+            <button class="slower-btn slower-btn-${index + 1}">Slower</button>
+            <button class="start-btn start-btn-${index + 1}">Start</button>
+            <button class="stop-btn stop-btn-${index + 1}">Stop</button>
+            <button class="faster-btn faster-btn-${index + 1}">Faster</button>
+          </div>
+          <button class="set-date-btn">Set Date</button>
+          <div class="disclaimer-msg"><p>Size not to scale</p></div>
+        </div>
         <div class="orbit-container orbit-container-${index + 1} grid-col-span-3 hide"></div>
       </div>
     `;
