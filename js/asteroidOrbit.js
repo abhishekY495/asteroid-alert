@@ -2,7 +2,9 @@ async function asteroidOrbit(asteroidID, index) {
   const apiURL = `.netlify/functions/getOrbitData?id=${asteroidID}`;
   const orbitContainer = document.querySelector(`.orbit-container-${index}`);
   const orbitButton = document.querySelector(`.toggle-orbit-btn-${index}`);
+  const spaceOptions = document.querySelector(`.space-options-${index}`);
   orbitContainer.classList.toggle("hide");
+  spaceOptions.classList.toggle("hide");
   if (!orbitContainer.classList.contains("hide")) {
     orbitButton.classList.add("open-space");
   } else {
