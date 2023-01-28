@@ -81,10 +81,12 @@ a {
   font-weight: 300;
   word-spacing: 1px;
   line-height: 28px;
+  width: 1000px;
+  margin: 0 auto;
 }
 #about-img {
   width: 1.8rem;
-  margin: 0 -3px -9px -3px;
+  margin: 0 -5px -8px -5px;
 }
 #about-img:hover {
   cursor: pointer;
@@ -96,6 +98,43 @@ a {
 .about-links {
   font-weight: 600;
   color: #2674c8;
+}
+#about-divider-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  opacity: 0.8;
+  margin-top: 0.3rem;
+}
+.asterik {
+  width: 1rem;
+  opacity: 0.5;
+}
+.about-divider {
+  width: 20%;
+  padding: 0.8px;
+  background-color: #414141;
+  color: #414141;
+}
+
+/*  */
+
+#loading-img {
+  position: relative;
+  width: 300px;
+  border: none;
+  margin: -35px 0 0 0;
+  z-index: -1;
+}
+#loading-message {
+  text-align: center;
+  margin: 3rem 0 0 0;
+  font-size: 1.3rem;
+  font-weight: 200;
+}
+.blink {
+  opacity: 0.78;
 }
 
 /*  */
@@ -263,31 +302,31 @@ footer {
   margin-top: auto;
 }
 footer > p {
-  padding: 0.5rem 0;
+  padding: 0.5rem 0 0.2rem 0;
   color: #c5c5c5;
 }
 #logos {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
-  margin: 0 0 0.5rem 0;
+  gap: 0.8rem;
+  margin: 0 0 0.2rem 0;
 }
 .logo {
-  width: 4rem;
+  width: 2.5rem;
   opacity: 0.6;
 }
 .logo:hover {
   opacity: 0.9;
 }
 .netlify-logo {
-  width: 2.8rem;
+  width: 2.3rem;
 }
 .nasa-logo {
   width: 3rem;
 }
 .flaticon-logo {
-  width: 2.8rem;
+  width: 2.4rem;
 }
 
 /*  */
