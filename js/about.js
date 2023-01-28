@@ -13,6 +13,11 @@ about.innerHTML = `
   <a class="about-links" href="https://typpo.github.io/spacekit/" target="_blank">spacekit</a>. 
   The app is open-source and can be found on 
   <a class="about-links" href="https://github.com/abhishekY495/asteroidalert" target="_blank">github</a>. 
-  Made by <a class="about-links" href="https://twitter.com/abhishekY495" target="_blank">@abhishekY495</a>
+  <br>
+  <div id="about-divider-container">
+    <div class="about-divider"></div>
+    <img class="asterik" src="./assets/images/asterisk.png" />
+    <div class="about-divider"></div>
+  </div>
 </p>
 `;
