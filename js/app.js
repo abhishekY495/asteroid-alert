@@ -5,6 +5,7 @@ const year = date.getFullYear();
 const todaysDate = `${addZero(year)}-${addZero(month)}-${addZero(day)}`;
 
 const getAsteroidsData = async () => {
+  const loadingContainer = document.querySelector(".loading-container");
   const localAsteroids = JSON.parse(localStorage.getItem("localAsteroids"));
   const localDate = localStorage.getItem("localDate");
   if (!localAsteroids) {
@@ -12,6 +13,7 @@ const getAsteroidsData = async () => {
     const data = await response.json();
     localStorage.setItem("localAsteroids", JSON.stringify(data));
     localStorage.setItem("localDate", todaysDate);
+    loadingContainer.style.display = "none";
     listAsteroids(data);
   } else {
     if (String(localDate) !== String(todaysDate)) {
@@ -20,8 +22,10 @@ const getAsteroidsData = async () => {
       const data = await response.json();
       localStorage.setItem("localAsteroids", JSON.stringify(data));
       localStorage.setItem("localDate", todaysDate);
+      loadingContainer.style.display = "none";
       listAsteroids(data);
     } else {
+      loadingContainer.style.display = "none";
       listAsteroids(localAsteroids);
     }
   }
