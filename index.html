@@ -25,11 +25,16 @@
     </header>
     <div id="divider"></div>
     <section id="about"></section>
-    <div id="asteroids"></div>
+    <div id="asteroids">
+      <div class="loading-container">
+        <p id="loading-message">Scanning the sky...</p>
+        <img id="loading-img" src="./assets/loading.gif" alt="">
+      </div>
+    </div>
     <footer>
       <p>Powered by</p>
       <div id="logos">
-        <a href="https://www.netlify.com" target="_blank">
+        <a href="https://www.netlify.com/products/functions" target="_blank">
           <img
             class="logo netlify-logo"
             src="./assets/logos/netlify-logo.png"
@@ -66,5 +71,6 @@
     <script src="./js/spaceOptions.js"></script>
     <script src="./js/app.js"></script>
     <script src="./js/about.js"></script>
+    <script src="./js/blinkAnimation.js"></script>
   </body>
 </html>
