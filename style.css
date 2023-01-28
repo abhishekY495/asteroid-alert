@@ -92,8 +92,9 @@ a {
   cursor: pointer;
   animation: rotate 2s infinite;
 }
-.bold {
+.date {
   font-weight: 500;
+  color: #ffb35c;
 }
 .about-links {
   font-weight: 600;
@@ -331,6 +332,12 @@ footer > p {
 
 /*  */
 
+@media (max-width:1065px) {
+  #about {
+    width: 800px;
+  }
+}
+
 @media (max-width: 1050px) {
   .asteroid-container {
     width: 800px;
@@ -377,6 +384,12 @@ footer > p {
   }
 }
 
+@media (max-width:865px) {
+  #about {
+    width: 700px;
+  }
+}
+
 @media (max-width: 800px) {
   .asteroid-container {
     width: 600px;
@@ -388,6 +401,22 @@ footer > p {
   }
   .asteroid-size-comparison, .asteroid-speed-comparison {
     text-align: center;
+  }
+}
+
+@media (max-width:765px) {
+  #about {
+    width: 600px;
+    font-size: 1rem;
+    line-height: normal;
+    word-spacing: normal;
+  }
+  .date {
+    font-size: 1rem;
+  }
+  #about-img {
+    width: 1.5rem;
+    margin: 0 -3px -7px -3px;
   }
 }
 
@@ -417,6 +446,12 @@ footer > p {
   }
   .comparison-image {
     width: 90px;
+  }
+}
+
+@media (max-width:665px) {
+  #about {
+    width: auto;
   }
 }
 
