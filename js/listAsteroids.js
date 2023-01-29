@@ -4,6 +4,8 @@ function listAsteroids(asteroidsData) {
   const nearEarthObjects = asteroidsData["near_earth_objects"];
   const todaysDate = Object.keys(nearEarthObjects)[0];
   const asteroids = nearEarthObjects[todaysDate];
+  const totalAsteroidsCount = asteroids.length;
+  let dangerousAsteroidsCount = 0;
   // 
   asteroids.map((asteroid, index) => {
     const asteroidName = asteroid.name.match(regex)[1];
@@ -16,6 +18,7 @@ function listAsteroids(asteroidsData) {
     const asteroidSpeed = parseFloat(asteroid.close_approach_data[0].relative_velocity.kilometers_per_second);
     const asteroidMissDistance = parseFloat(asteroid.close_approach_data[0].miss_distance.astronomical);
     // 
+    if (isHazardous) dangerousAsteroidsCount ++;
     asteroidsList.innerHTML += `
       <div class="container">
         <li class="asteroid-container asteroid-container-${index + 1}">
@@ -46,7 +49,7 @@ function listAsteroids(asteroidsData) {
           <div class="asteroid-speed-comparison">${compareSpeed(asteroidSpeed)}</div>
         </li>
         <div class="space-options space-options-${index + 1} hide">
-          <label class="options-toggle" onclick="spaceOptions(${index + 1})"><input type="checkbox">Show options</label>
+          <label class="options-toggle" onclick="spaceOptions(${index + 1})"><input type="checkbox">Options</label>
           <div class="options options-${index + 1}">
             <button class="slower-btn slower-btn-${index + 1}">Slower</button>
             <button class="start-btn start-btn-${index + 1}">Start</button>
@@ -60,4 +63,11 @@ function listAsteroids(asteroidsData) {
       </div>
     `;
   });
+  const element = document.createElement("div");
+  element.innerHTML = `
+  <p id="asteroids-heading">
+    <span class="count">${totalAsteroidsCount}</span> Asteroids found <br>
+    ${dangerousAsteroidsCount>0 ? `<span class="dangerous-count">${dangerousAsteroidsCount}</span> Potentially Dangerous` : ``}
+  </p>`
+  asteroidsList.prepend(element)
 }
