@@ -76,7 +76,7 @@ a {
 
 #about {
   text-align: justify;
-  padding: 0 1.5rem 1rem 1.5rem;
+  padding: 0 1.5rem 0.5rem 1.5rem;
   font-size: 1.1rem;
   font-weight: 300;
   word-spacing: 1px;
@@ -93,8 +93,10 @@ a {
   animation: rotate 2s infinite;
 }
 .date {
+  font-size: 1.1rem;
   font-weight: 500;
   color: #ffb35c;
+  word-spacing: -2px;
 }
 .about-links {
   font-weight: 600;
@@ -110,7 +112,6 @@ a {
 }
 .asterik {
   width: 1rem;
-  opacity: 0.5;
 }
 .about-divider {
   width: 20%;
@@ -145,6 +146,15 @@ a {
   flex-direction: column;
   align-items: center;
 }
+#asteroids-heading {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 200;
+  margin: 0 0 0.5rem 0;
+}
+.dangerous-count {
+  color: #ff6d6d;
+}
 .container {
   margin: 0 0 2rem 0;
 }
@@ -156,7 +166,7 @@ a {
   justify-items: stretch;
   width: 900px;
   border-radius: 5px;
-  padding: 1rem 0 1rem 5rem;
+  padding: 1.3rem 0 1.3rem 5rem;
   letter-spacing: 0.4px;
 }
 .grid-col-span-3 {
@@ -176,7 +186,7 @@ span {
   font-weight: 300;
 }
 .comparison-image {
-  width: 130px;
+  width: 110px;
 }
 
 .asteroid-details {
@@ -232,7 +242,7 @@ span {
 
 .orbit-container {
   width: 980px;
-  height: 500px;
+  height: 450px;
   background-color: black;
 }
 .orbit-container > canvas {
@@ -263,29 +273,29 @@ span {
 .options > button {
   border: none;
   border-radius: 2px;
-  opacity: 0.7;
+  opacity: 0.6;
   padding: 0.2rem 0.5rem;
   font-size: 0.8rem;
 }
 .options > button:hover {
-  opacity: 0.8;
+  opacity: 0.7;
 }
 .set-date-btn {
   position: absolute;
   right: 5px;
   top: 32px;
   border-radius: 2px;
-  opacity: 0.7;
+  opacity: 0.6;
   padding: 0.2rem 0.5rem;
   font-size: 0.8rem;
   display: none;
 }
 .set-date-btn:hover {
-  opacity: 0.8;
+  opacity: 0.7;
 }
 .disclaimer-msg {
   position: absolute;
-  bottom: -498px;
+  bottom: -447px;
   left: 1px;
   background-color: #8eddff;
   color: black;
@@ -328,6 +338,9 @@ footer > p {
 }
 .flaticon-logo {
   width: 2.4rem;
+}
+.github-logo {
+  width: 2.2rem;
 }
 
 /*  */
@@ -465,6 +478,13 @@ footer > p {
   }
   .orbit-container {
     width: 508px;
+    height: 400px;
+  }
+  .options-toggle {
+    font-size: 0.9rem;
+  }
+  .disclaimer-msg {
+    bottom: -397px;
   }
   .asteroid-details {
     grid-column: span 2;
@@ -481,10 +501,12 @@ footer > p {
   .asteroid-size-comparison {
     margin: 0;
     justify-self: end;
+    width: 105px;
   }
   .asteroid-speed-comparison {
     margin: 0;
     justify-self: start;
+    width: 100px;
   }
 }
 
@@ -505,6 +527,9 @@ footer > p {
   }
   #header-img {
     width: 2.5rem;
+  }
+  #asteroids-heading > .count, .dangerous-count {
+    font-size: 1rem;
   }
   .asteroid-container {
     padding: 0.8rem 0;
@@ -529,6 +554,18 @@ footer > p {
   .comparison-image {
     width: 80px;
   }
+  .netlify-logo {
+    width: 2rem;
+  }
+  .nasa-logo {
+    width: 2.1rem;
+  }
+  .flaticon-logo {
+    width: 2rem;
+  }
+  .github-logo {
+    width: 1.8rem;
+  }
 }
 
 @media (max-width:400px) {
@@ -546,6 +583,12 @@ footer > p {
   }
   .orbit-container {
     height: 280px;
+  }
+  .options, .options-toggle, .set-date-btn {
+    display: none;
+  }
+  .disclaimer-msg {
+    bottom: -277px;
   }
 }
 
