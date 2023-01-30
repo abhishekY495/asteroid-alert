@@ -1,7 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap");
 
+:root {
+  --background-color: #1b1b1b;
+  --primary-color: #0e0e0e;
+  --divider-color: #2a2a2a;
+  --off-white: #bdbdbd;
+  --links-color: #3496ff;
+  --date-color: #ffa33b;
+  --not-dangerous: #6fff87;
+  --dangerous: #fb5252;
+  --disclaimer-bg: #8eddff;
+}
+
 body {
-  background-color: #212121;
+  background-color: var(--background-color);
   color: white;
   font-family: "Poppins", sans-serif;
   margin: 0;
@@ -70,7 +82,7 @@ a {
 #divider {
   width: 99%;
   padding: 1px;
-  background-color: #414141;
+  background-color: var(--divider-color);
   margin: -5px auto 8px auto;
 }
 
@@ -95,12 +107,12 @@ a {
 .date {
   font-size: 1.1rem;
   font-weight: 500;
-  color: #ffb35c;
+  color: var(--date-color);
   word-spacing: -2px;
 }
 .about-links {
-  font-weight: 600;
-  color: #2674c8;
+  font-weight: 500;
+  color: var(--links-color);
 }
 #about-divider-container {
   display: flex;
@@ -116,8 +128,7 @@ a {
 .about-divider {
   width: 20%;
   padding: 0.8px;
-  background-color: #414141;
-  color: #414141;
+  background-color: var(--divider-color);
 }
 
 /*  */
@@ -150,16 +161,16 @@ a {
   text-align: center;
   font-size: 1.2rem;
   font-weight: 200;
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 0.8rem 0;
 }
 .dangerous-count {
-  color: #ff6d6d;
+  color: var(--dangerous);
 }
 .container {
   margin: 0 0 2rem 0;
 }
 .asteroid-container {
-  background-color: #080808;
+  background-color: var(--primary-color);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
@@ -232,18 +243,18 @@ span {
   margin: 0.5rem 0 0 0;
 }
 .dangerous {
-  background-color: #ff5e5e;
+  background-color: var(--dangerous);
   color: white;
 }
 .not-dangerous {
-  background-color: #6fff87;
+  background-color: var(--not-dangerous);
   color: black;
 }
 
 .orbit-container {
   width: 980px;
   height: 450px;
-  background-color: black;
+  background-color: var(--primary-color);
 }
 .orbit-container > canvas {
   border-bottom-left-radius: 5px;
@@ -297,7 +308,7 @@ span {
   position: absolute;
   bottom: -447px;
   left: 1px;
-  background-color: #8eddff;
+  background-color: var(--disclaimer-bg);
   color: black;
   font-size: 0.9rem;
   font-weight: 400;
@@ -307,14 +318,13 @@ span {
 }
 
 footer {
-  background-color: black;
-  color: whitesmoke;
+  background-color: var(--primary-color);
+  color: var(--off-white);
   text-align: center;
   margin-top: auto;
 }
 footer > p {
   padding: 0.5rem 0 0.2rem 0;
-  color: #c5c5c5;
 }
 #logos {
   display: flex;
@@ -573,7 +583,7 @@ footer > p {
     font-size: 1.3rem;
   }
   .asteroid-container {
-    width: 300px;
+    width: 350px;
   }
   .orbit-container {
     width: 300px;
