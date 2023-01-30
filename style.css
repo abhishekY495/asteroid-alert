@@ -585,9 +585,6 @@ footer > p {
   .asteroid-container {
     width: 350px;
   }
-  .orbit-container {
-    width: 300px;
-  }
   .comparison-image {
     width: 60px;
   }
@@ -599,6 +596,15 @@ footer > p {
   }
   .disclaimer-msg {
     bottom: -277px;
+  }
+}
+
+@media (max-width:370px) {
+  .asteroid-container {
+    width: 300px;
+  }
+  .orbit-container {
+    width: 300px;
   }
 }
 
