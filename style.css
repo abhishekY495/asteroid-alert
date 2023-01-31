@@ -317,6 +317,8 @@ span {
   border-top-right-radius: 0.5rem;
 }
 
+/*  */
+
 footer {
   background-color: var(--primary-color);
   color: var(--off-white);
@@ -341,16 +343,16 @@ footer > p {
   opacity: 0.9;
 }
 .netlify-logo {
-  width: 2.3rem;
+  width: 2rem;
 }
 .nasa-logo {
-  width: 3rem;
-}
-.flaticon-logo {
-  width: 2.4rem;
+  width: 2.5rem;
 }
 .github-logo {
-  width: 2.2rem;
+  width: 1.9rem;
+}
+.flaticon-logo {
+  width: 2.3rem;
 }
 
 /*  */
