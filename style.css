@@ -324,9 +324,16 @@ footer {
   color: var(--off-white);
   text-align: center;
   margin-top: auto;
-}
-footer > p {
   padding: 0.5rem 0 0.2rem 0;
+}
+#powered-by {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+#powered-by > p {
+  margin: 0 0 0.6rem 0;
 }
 #logos {
   display: flex;
@@ -353,6 +360,9 @@ footer > p {
 }
 .flaticon-logo {
   width: 2.3rem;
+}
+#hits-count-img {
+  margin: 0 0 0.2rem 0;
 }
 
 /*  */
