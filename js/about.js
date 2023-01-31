@@ -4,9 +4,9 @@ const todaysDate_ = String(dateObj).split(" ").splice(1,3);
 
 about.innerHTML = `
 <p>
-  Asteroid alert uses 
-  <a class="about-links" href="https://api.nasa.gov/" target="_blank">NASA's NeoWs API</a> 
-  to provide the most recent information on asteroids that will make a close approach by 
+  Asteroid alert uses NASA's Near Earth Object Web Service 
+  (<a class="about-links" href="https://api.nasa.gov/" target="_blank">NeoWS</a>) API 
+  to provide the most up-to-date information on asteroids, that will make a close approach by 
   Earth today i.e <span class="date">
     ${todaysDate_[1]}
     ${todaysDate_[0]}
