@@ -11,12 +11,12 @@ about.innerHTML = `
     ${todaysDate_[1]}
     ${todaysDate_[0]}
     ${todaysDate_[2]}</span>. 
-  Click <img id="about-img" src="./assets/images/asteroid-button.png"></img> 
+  Click <img id="about-img" src="./assets/images/asteroid-button.png" alt="An asteroid"></img> 
   to get a 3D view of where the asteroid is in space. 
   <br>
   <div id="about-divider-container">
     <div class="about-divider"></div>
-    <img class="asterik" src="./assets/images/asterisk.png" />
+    <img class="asterik" src="./assets/images/asterisk.png" alt="asterik"/>
     <div class="about-divider"></div>
   </div>
 </p>
