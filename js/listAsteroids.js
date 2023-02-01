@@ -67,7 +67,7 @@ function listAsteroids(asteroidsData) {
   element.innerHTML = `
   <p id="asteroids-heading">
     <span class="count">${totalAsteroidsCount}</span> Asteroids found <br>
-    ${dangerousAsteroidsCount>0 ? `<span class="dangerous-count">${dangerousAsteroidsCount}</span> Potentially Dangerous` : ``}
+    <span class="dangerous-count">${dangerousAsteroidsCount}</span> Potentially Dangerous
   </p>`
   asteroidsList.prepend(element)
 }
