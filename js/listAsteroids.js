@@ -58,6 +58,7 @@ function listAsteroids(asteroidsData) {
           </div>
           <button class="set-date-btn">Set Date</button>
           <div class="disclaimer-msg"><p>Size not to scale</p></div>
+          <button class="fullscreen-btn" onclick="fullScreen('orbit-container-${index + 1}')"></button>
         </div>
         <div class="orbit-container orbit-container-${index + 1} grid-col-span-3 hide"></div>
       </div>
