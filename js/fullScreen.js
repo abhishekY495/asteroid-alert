@@ -5,6 +5,8 @@ function fullScreen(elem) {
     orbitContainer.requestFullscreen();
   } else if (orbitContainer.webkitRequestFullscreen) {
     orbitContainer.webkitRequestFullscreen();
+  } else if (orbitContainer.mozRequestFullScreen) {
+    orbitContainer.mozRequestFullscreen();
   } else if (orbitContainer.msRequestFullscreen) {
     orbitContainer.msRequestFullscreen();
   }
