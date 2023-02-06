@@ -10,6 +10,7 @@
   --not-dangerous: #6fff87;
   --dangerous: #fb5252;
   --disclaimer-bg: #8eddff;
+  --error: #fb5252;
 }
 
 body {
@@ -148,6 +149,28 @@ a {
 }
 .blink {
   opacity: 0.78;
+}
+
+/*  */
+
+#error-message {
+  font-size: 1.3rem;
+  font-weight: 200;
+  text-align: center;
+  margin: 2rem 0 0.4rem 0;
+  color: var(--error);
+}
+#error-image {
+  width: 250px;
+  border: none;
+  border-radius: 0.5rem;
+  opacity: 0.9;
+}
+#dog-image {
+  width: 280px;
+  border: none;
+  border-radius: 0.5rem;
+  opacity: 0.9;
 }
 
 /*  */
