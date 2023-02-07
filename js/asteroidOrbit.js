@@ -11,24 +11,33 @@ async function asteroidOrbit(asteroidID, index) {
     orbitButton.classList.remove("open-space");
     orbitButton.classList.remove("rotate");
   }
+  //
   const localOrbitData = localStorage.getItem(JSON.parse(asteroidID));
   const localDate = localStorage.getItem("localDate");
-  //
   if (!localOrbitData) {
-    const response = await fetch(apiURL);
-    const data = await response.json();
-    localStorage.setItem(asteroidID, JSON.stringify(data));
-    localStorage.setItem("localDate", todaysDate);
-    createSpace(orbitContainer, index, data, asteroidID);
-  } else {
-    if (String(localDate) !== String(todaysDate)) {
+    try {
       const response = await fetch(apiURL);
       const data = await response.json();
       localStorage.setItem(asteroidID, JSON.stringify(data));
       localStorage.setItem("localDate", todaysDate);
       createSpace(orbitContainer, index, data, asteroidID);
+    } catch {
+      asteroidOrbitDataErrorHandler(orbitContainer);
     }
-    const data = JSON.parse(localStorage.getItem(asteroidID));
-    createSpace(orbitContainer, index, data, asteroidID);
+  } else {
+    try {
+      if (String(localDate) !== String(todaysDate)) {
+        const response = await fetch(apiURL);
+        const data = await response.json();
+        localStorage.setItem(asteroidID, JSON.stringify(data));
+        localStorage.setItem("localDate", todaysDate);
+        createSpace(orbitContainer, index, data, asteroidID);
+      } else {
+        const data = JSON.parse(localStorage.getItem(asteroidID));
+        createSpace(orbitContainer, index, data, asteroidID);
+      }
+    } catch {
+      asteroidOrbitDataErrorHandler(orbitContainer);
+    }
   }
 }
