@@ -172,6 +172,15 @@ a {
   border-radius: 0.5rem;
   opacity: 0.9;
 }
+/*  */
+#orbit-data-error-message {
+  font-weight: 200;
+  text-align: center;
+  font-size: 1.8rem;
+  padding: 5rem 0 0 0;
+  line-height: 2rem;
+  text-shadow: 0 0 1vw #e2e2e2;
+}
 
 /*  */
 
