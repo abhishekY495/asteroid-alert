@@ -11,7 +11,6 @@ const getAsteroidsData = async () => {
     try {
       const response = await fetch(`.netlify/functions/getAsteroids?date=${todaysDate}`);
       const data = await response.json();
-      console.log(data);
       localStorage.setItem("localAsteroids", JSON.stringify(data));
       localStorage.setItem("localDate", todaysDate);
       loadingContainer.style.display = "none";
