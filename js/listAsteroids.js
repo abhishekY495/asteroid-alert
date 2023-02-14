@@ -26,8 +26,8 @@ function listAsteroids(asteroidsData) {
             <div class="asteroid-details">
               <p class="asteroid-name">${asteroidName}</p>
               <p class="asteroid-size">Estimated Size - ${asteroidEstimatedSize} m</p>
-              <p class="asteroid-miss-distance">Miss Distance - ${asteroidMissDistance.toFixed(2)} au</p>
               <p class="asteroid-approach-time">Approach Time - ${asteroidApproachTime}</p>
+              <p class="asteroid-miss-distance">Distance - ${asteroidMissDistance.toFixed(4)} au</p>
               ${
               isHazardous
                 ? `<div class="toggle-orbit-div">
