@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "netlify-cli": "^12.5.0"
+    "netlify-cli": "^17.5.1"
   },
   "dependencies": {
     "dotenv": "^16.0.3",
