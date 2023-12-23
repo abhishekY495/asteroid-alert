@@ -1,16 +1,18 @@
 const about = document.querySelector("#about");
-const dateObj = new Date;
-const todaysDate_ = String(dateObj).split(" ").splice(1,3);
+const dateObj = new Date();
+const todaysDate_ = String(dateObj).split(" ").splice(1, 3);
 
 about.innerHTML = `
 <p>
-  Asteroid alert uses NASA's Near Earth Object Web Service 
-  (<a class="about-links" href="https://api.nasa.gov/" target="_blank">NeoWS</a>) API 
-  to provide the most up-to-date information on asteroids, that will make a close approach by 
-  Earth today i.e <span class="date">
+  Asteroid Alert uses NASA's <a class="about-links" href="https://api.nasa.gov/" target="_blank">NeoWs</a> 
+  ( Near Earth Object Web Service ) API to provide the most up-to-date information on asteroids, 
+  that will make a close approach by Earth today i.e 
+  <span class="date">
     ${todaysDate_[1]}
     ${todaysDate_[0]}
-    ${todaysDate_[2]}</span>. 
+    ${todaysDate_[2]}
+  </span>
+  <br>
   Click <img id="about-img" src="./assets/images/asteroid-button.png" alt="An asteroid"></img> 
   to get a 3D view of where the asteroid is in space. 
   <br>

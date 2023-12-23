@@ -9,7 +9,9 @@ const getAsteroidsData = async () => {
   const loadingContainer = document.querySelector(".loading-container");
   if (!localAsteroids) {
     try {
-      const response = await fetch(`.netlify/functions/getAsteroids?date=${todaysDate}`);
+      const response = await fetch(
+        `.netlify/functions/getAsteroids?date=${todaysDate}`
+      );
       const data = await response.json();
       localStorage.setItem("localAsteroids", JSON.stringify(data));
       localStorage.setItem("localDate", todaysDate);
@@ -24,9 +26,10 @@ const getAsteroidsData = async () => {
       const localDate = localStorage.getItem("localDate");
       if (String(localDate) !== String(todaysDate)) {
         localStorage.clear();
-        const response = await fetch(`.netlify/functions/getAsteroids?date=${todaysDate}`);
+        const response = await fetch(
+          `.netlify/functions/getAsteroids?date=${todaysDate}`
+        );
         const data = await response.json();
-        console.log(data);
         localStorage.setItem("localAsteroids", JSON.stringify(data));
         localStorage.setItem("localDate", todaysDate);
         loadingContainer.style.display = "none";
