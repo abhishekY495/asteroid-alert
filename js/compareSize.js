@@ -1,5 +1,11 @@
 function compareSize(asteroidEstimatedSize) {
   asteroidEstimatedSize = parseInt(asteroidEstimatedSize);
+  if (asteroidEstimatedSize === 0) {
+    return `
+      <img class="comparison-image" src="../assets/images/asteroids.png" alt="Asteroids"></img>
+      <p><b>No Data</b></p>
+    `;
+  }
   if (asteroidEstimatedSize <= 1) {
     return `
       <img class="comparison-image" src="../assets/images/guitar.png" alt="Guitar"></img>

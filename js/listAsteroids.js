@@ -6,51 +6,79 @@ function listAsteroids(asteroidsData) {
   const asteroids = nearEarthObjects[todaysDate];
   const totalAsteroidsCount = asteroidsData["element_count"];
   let dangerousAsteroidsCount = 0;
-  // 
+  //
   if (totalAsteroidsCount > 0) {
     asteroids.map((asteroid, index) => {
-      const asteroidName = asteroid.name.match(regex)[1];
-      const asteroidMaxSize = asteroid.estimated_diameter.meters.estimated_diameter_max;
-      const asteroidMinSize = asteroid.estimated_diameter.meters.estimated_diameter_min;
-      const asteroidEstimatedSize = parseFloat((asteroidMaxSize + asteroidMinSize) / 2).toFixed(0);
-      const asteroidApproachTime = asteroid.close_approach_data[0].close_approach_date_full.split(" ")[1];
-      const isHazardous = asteroid.is_potentially_hazardous_asteroid;
-      const asteroidNeoReferenceId = asteroid.neo_reference_id;
-      const asteroidSpeed = parseFloat(asteroid.close_approach_data[0].relative_velocity.kilometers_per_second);
-      const asteroidMissDistance = parseFloat(asteroid.close_approach_data[0].miss_distance.astronomical);
-      // 
-      if (isHazardous) dangerousAsteroidsCount ++;
+      const asteroidName = asteroid?.name?.match(regex)[1];
+      const asteroidMaxSize =
+        asteroid?.estimated_diameter?.meters?.estimated_diameter_max || 0;
+      const asteroidMinSize =
+        asteroid?.estimated_diameter?.meters?.estimated_diameter_min || 0;
+      const asteroidEstimatedSize = parseFloat(
+        (asteroidMaxSize + asteroidMinSize) / 2
+      )?.toFixed(0);
+      const asteroidApproachTime =
+        asteroid?.close_approach_data[0]?.close_approach_date_full?.split(
+          " "
+        )[1];
+      const isHazardous = asteroid?.is_potentially_hazardous_asteroid;
+      const asteroidNeoReferenceId = asteroid?.neo_reference_id;
+      const asteroidSpeed = parseFloat(
+        asteroid?.close_approach_data[0]?.relative_velocity
+          ?.kilometers_per_second
+      );
+      const asteroidMissDistance = parseFloat(
+        asteroid?.close_approach_data[0]?.miss_distance?.astronomical
+      );
+      //
+      if (isHazardous) dangerousAsteroidsCount++;
       asteroidsList.innerHTML += `
         <div class="container">
           <li class="asteroid-container asteroid-container-${index + 1}">
             <div class="asteroid-details">
               <p class="asteroid-name">${asteroidName}</p>
-              <p class="asteroid-size">Estimated Size - ${asteroidEstimatedSize} m</p>
+              <p class="asteroid-size">Estimated Size - ${
+                Number(asteroidEstimatedSize) === 0
+                  ? "No Data"
+                  : asteroidEstimatedSize + " m"
+              }</p>
               <p class="asteroid-approach-time">Approach Time - ${asteroidApproachTime}</p>
-              <p class="asteroid-miss-distance">Distance - ${asteroidMissDistance.toFixed(4)} au</p>
+              <p class="asteroid-miss-distance">Distance - ${asteroidMissDistance.toFixed(
+                4
+              )} au</p>
               ${
-              isHazardous
-                ? `<div class="toggle-orbit-div">
+                isHazardous
+                  ? `<div class="toggle-orbit-div">
                     <p class="dangerous">Potentially Dangerous</p>
                     <button
                       class="toggle-orbit-btn toggle-orbit-btn-${index + 1}" 
-                      onclick="asteroidOrbit(${asteroidNeoReferenceId},${index + 1})">
+                      onclick="asteroidOrbit(${asteroidNeoReferenceId},${
+                      index + 1
+                    })">
                     </button>
                   </div>`
-                : `<div class="toggle-orbit-div">
+                  : `<div class="toggle-orbit-div">
                     <p class="not-dangerous">Not Dangerous</p>
                     <button
                       class="toggle-orbit-btn toggle-orbit-btn-${index + 1}" 
-                      onclick="asteroidOrbit(${asteroidNeoReferenceId},${index + 1})">
+                      onclick="asteroidOrbit(${asteroidNeoReferenceId},${
+                      index + 1
+                    })">
                     </button>
                   </div>`
               }
             </div>
-            <div class="asteroid-size-comparison">${compareSize(asteroidEstimatedSize)}</div>
-            <div class="asteroid-speed-comparison">${compareSpeed(asteroidSpeed)}</div>
+            <div class="asteroid-size-comparison">${compareSize(
+              asteroidEstimatedSize
+            )}</div>
+            <div class="asteroid-speed-comparison">${compareSpeed(
+              asteroidSpeed
+            )}</div>
           </li>
           <div class="space-options space-options-${index + 1} hide">
-            <label class="options-toggle" onclick="spaceOptions(${index + 1})"><input type="checkbox">Options</label>
+            <label class="options-toggle" onclick="spaceOptions(${
+              index + 1
+            })"><input type="checkbox">Options</label>
             <div class="options options-${index + 1}">
               <button class="slower-btn slower-btn-${index + 1}">Slower</button>
               <button class="start-btn start-btn-${index + 1}">Start</button>
@@ -59,9 +87,15 @@ function listAsteroids(asteroidsData) {
             </div>
             <button class="set-date-btn">Set Date</button>
             <div class="disclaimer-msg"><p>Size not to scale</p></div>
-            <button class="fullscreen-btn" onclick="fullScreen('orbit-container-${index + 1}')"></button>
+            <button class="fullscreen-btn" onclick="fullScreen('orbit-container-${
+              index + 1
+            }')"></button>
           </div>
-          <div class="orbit-container orbit-container-${index + 1} grid-col-span-3 hide" ondblclick="fullScreen('orbit-container-${index + 1}')"></div>
+          <div class="orbit-container orbit-container-${
+            index + 1
+          } grid-col-span-3 hide" ondblclick="fullScreen('orbit-container-${
+        index + 1
+      }')"></div>
         </div>
       `;
     });
@@ -70,7 +104,7 @@ function listAsteroids(asteroidsData) {
     <p id="asteroids-heading">
       <span class="count">${totalAsteroidsCount}</span> Asteroids found <br>
       <span class="dangerous-count">${dangerousAsteroidsCount}</span> Potentially Dangerous
-    </p>`
+    </p>`;
     asteroidsList.prepend(element);
   } else {
     const element = document.createElement("div");
@@ -80,7 +114,7 @@ function listAsteroids(asteroidsData) {
       <span class="dangerous-count">${dangerousAsteroidsCount}</span> Potentially Dangerous
     </p>
     <img id="dog-image" src="./assets/space-dog.webp" alt="A dog floating around in the International Space Station.">
-    `
+    `;
     asteroidsList.prepend(element);
   }
 }
